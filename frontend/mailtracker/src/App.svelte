@@ -1,10 +1,11 @@
 <script>
   // const baseUrl = 'http://localhost:5001/scaccia-mailtracker/us-central1'
   const baseUrl = 'https://europe-west3-scaccia-mailtracker.cloudfunctions.net/mailTracker'
-  // const baseUrl = '/'
+
   let description = ''
   let id = null;
   let activated = false;
+
   const create = async () => {
     const response = await fetch(`${baseUrl}/create?description=${description}`)
     const json = await response.json();

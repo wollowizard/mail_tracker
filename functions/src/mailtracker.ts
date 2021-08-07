@@ -5,6 +5,7 @@ import * as nodemailer from 'nodemailer'
 import axios, { AxiosResponse } from 'axios';
 import { pick } from 'lodash'
 import DocumentSnapshot = firestore.DocumentSnapshot;
+import { stringify } from 'yaml'
 
 const moment = require('moment-timezone');
 
@@ -73,7 +74,7 @@ export default class Mailtracker {
       from: 'mail_tracker@yahoo.com',
       to: 'alfredo.scaccialepre@gmail.com',
       subject: `Tracker ${id}`,
-      text: `Tracker ${id} for ${img.description}. Views: ${JSON.stringify(img.views)}`,
+      text: `Tracker ${id} for ${img.description}. Views: ${stringify(img.views)}`,
     }, ((err, info) => {
       if (err) {
         console.error(err)

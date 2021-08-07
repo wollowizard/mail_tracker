@@ -47,7 +47,7 @@ app.use(cors);
     const buffer = Buffer.from(data, 'base64');
     response.writeHead(200, {
       'Access-Control-Allow-Origin': '*',
-      "Access-Control-Allow-Headers": "Content-Type",
+      'Access-Control-Allow-Headers': 'Content-Type',
       'Content-Type': 'image/png',
       'Content-Length': buffer.length
     });
